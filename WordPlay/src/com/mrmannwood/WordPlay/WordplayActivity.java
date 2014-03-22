@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class WordplayActivity extends Activity {
 
-    public static Context currentActivity;
+    static Context currentActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +27,13 @@ public class WordplayActivity extends Activity {
         super.onResume();
 
         currentActivity = this;
+    }
+
+    public static Context activityContext(){
+        return currentActivity;
+    }
+
+    public static Context applicationContext(){
+        return currentActivity.getApplicationContext();
     }
 }

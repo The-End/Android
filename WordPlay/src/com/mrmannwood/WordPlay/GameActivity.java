@@ -9,6 +9,11 @@ public class GameActivity extends WordplayActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.game_activity);
+
+        NetworkManager manager = NetworkManager.getNetworkManager();
+
+        manager.saveTestObject();
+
     }
 
 }
