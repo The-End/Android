@@ -1,15 +1,31 @@
 package com.mrmannwood.WordPlay;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 public class WordplayActivity extends Activity {
-    /**
-     * Called when the activity is first created.
-     */
+
+    public static Context currentActivity;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wordplay_activity);
+
+        currentActivity = this;
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        currentActivity = this;
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+        currentActivity = this;
     }
 }
